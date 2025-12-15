@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun construirTablero() {
         val anchoPantalla = resources.displayMetrics.widthPixels
-        val tamanyoCelda = (anchoPantalla * 0.85 / columnas).toInt()
+        val tamañoCelda = (anchoPantalla * 0.85 / columnas).toInt()
         val paddingCelda = 4
 
         tablero = mutableListOf()
@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
             val boton = Button(this).apply {
                 text = "↓"
                 layoutParams = TableRow.LayoutParams(
-                    tamanyoCelda,
+                    tamañoCelda,
                     TableRow.LayoutParams.WRAP_CONTENT
                 )
                 setOnClickListener {
@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
 
             for (columna in 0..columnas - 1) {
                 val celda = ImageView(this).apply {
-                    layoutParams = TableRow.LayoutParams(tamanyoCelda, tamanyoCelda).apply {
+                    layoutParams = TableRow.LayoutParams(tamañoCelda, tamañoCelda).apply {
                         setMargins(paddingCelda, paddingCelda, paddingCelda, paddingCelda)
                     }
                     setImageResource(R.drawable.circulo_vacio)
